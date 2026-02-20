@@ -103,6 +103,6 @@ server.listen(PORT, () => {
 });
 
 
-app.get("/", (req, res) => {
+app.post("/", (req, res) => {
   res.send("Backend is running successfully 🚀");
 });
