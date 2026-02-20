@@ -41,7 +41,7 @@ const server = http.createServer(app);
 // ✅ Create Socket.io instance
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://seedlyfrntdlive.vercel.app/",
     methods: ["GET", "POST"]
   }
 });
