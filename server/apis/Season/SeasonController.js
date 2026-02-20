@@ -175,6 +175,9 @@ update=(req,res)=>{
                 })
             }
             else{
+                 if(!!formData.seasonName){
+                   seasonData.seasonName=formData.seasonName 
+                }
                 
                 if(!!formData.startMonth){
                    seasonData.startMonth=formData.startMonth 

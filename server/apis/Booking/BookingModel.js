@@ -8,6 +8,7 @@ const BookingSchema=mongoose.Schema({
     leaseStartDate: {type: Date,required: true},
     leaseEndDate: {type: Date,required: true},
     status:{type:Boolean,default:"false"},
+    transactionId:{type:String,default:""},
     createdAt:{type:Date,default:Date.now()}
 
 })

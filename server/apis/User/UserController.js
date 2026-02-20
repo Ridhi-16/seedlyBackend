@@ -183,7 +183,7 @@ register=(req,res)=>{
                         res.json({
                             status:200,
                             success:true,
-                            message:"user Registered",
+                            message:"User Registered",
                             data:userData
                         })
                     })
@@ -192,7 +192,7 @@ register=(req,res)=>{
                         res.json({
                             status:500,
                             success:false,
-                            message:"internal server error"
+                            message:"Internal server error"
                         }) 
                     })
             }
@@ -210,7 +210,7 @@ register=(req,res)=>{
             res.json({
                 status: 500,
                 success: false,
-                message: "internal server error"
+                message: "Internal server error"
             })
         })
     }
@@ -281,8 +281,9 @@ softDelete=(req,res)=>{
 
 
 all=(req,res)=>{
-    let formData=req.body
-    UserModel.find({ userType: { $ne: 1 } })
+   
+    let { userType } = req.body;
+    UserModel.find({ userType})
     .then((userData)=>{
         if(userData.length>0){
            res.json({
