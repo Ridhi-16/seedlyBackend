@@ -6,6 +6,7 @@ const UserController=require("../apis/User/UserController")
 const SeasonController=require("../apis/Season/SeasonController")
 const LandController=require("../apis/Land/LandController")
 const BookingController=require("../apis/Booking/BookingController")
+const ContactController=require("../apis/Contact/ContactController")
 
 
 
@@ -20,6 +21,9 @@ router.use(require("../middleware/AdminTokenChecker"))
 router.post("/user/softDelete",UserController.softDelete)
 router.post("/user/delete",UserController.Delete)
 
+
+router.post("/contact/all",ContactController.all)
+router.post("/contact/changeStatus",ContactController.changeStatus)
 
 
 

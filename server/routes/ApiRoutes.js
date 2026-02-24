@@ -6,6 +6,8 @@ const BookingController=require("../apis/Booking/BookingController")
 const ProgressController=require("../apis/Progress/ProgressController")
 const SeasonController=require("../apis/Season/SeasonController")
 const CropController=require("../apis/Crop/CropController")
+const ContactController=require("../apis/Contact/ContactController")
+
 const DasboardController=require("../apis/Dashboard/Dashboard")
 
 
@@ -24,6 +26,8 @@ router.post("/user/single",UserController.single)
 router.post("/user/update",UserController.update)
 
 
+
+router.post("/contact/add",ContactController.add)
 
 
 
