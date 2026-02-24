@@ -7,13 +7,13 @@ add=(req,res)=>{
     let validation=""
     
     if(!formData.area){
-        validation+="area is required"
+        validation+="Area is required"
     }
      if(!formData.price){
-        validation+="price is required"
+        validation+="Price is required"
     }
      if(!formData.location){
-        validation+="location is required"
+        validation+="Location is required"
     }
     
      if(!formData.landAvailability){
@@ -68,7 +68,7 @@ add=(req,res)=>{
                     res.json({
                         status:200,
                         success:true,
-                        message:"land Added!!",
+                        message:"Land Added!!",
                         data:landData
                     })
                 })
@@ -76,7 +76,7 @@ add=(req,res)=>{
                     res.json({
                         status:500,
                         success:false,
-                        message:"internal server error"
+                        message:"Internal server error"
                     })
                 })
             }else{
@@ -113,7 +113,7 @@ all=(req,res)=>{
            res.json({
                 status:200,
                 success:true,
-                message:"lands Data is as:",
+                message:"Lands Data is as:",
                 data:landData
             })
         }
@@ -121,7 +121,7 @@ all=(req,res)=>{
             res.json({
                 status:404,
                 success:false,
-                message:"there are no lands"
+                message:"There are no lands"
             })
             
         }
@@ -130,7 +130,7 @@ all=(req,res)=>{
         res.json({
             status:500,
             success:false,
-            message:"internal server error",
+            message:"Internal server error",
             error:err.message
         })
     })
@@ -163,7 +163,7 @@ single=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no land "
+                    message:"There is no land "
                 })
             }
             else{
@@ -179,7 +179,7 @@ single=(req,res)=>{
             res.json({
                 status:500,
                 success:false,
-                message:"internal server error"
+                message:"Internal server error"
             })
         })
     }
@@ -206,7 +206,7 @@ update=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no data"
+                    message:"There is no data"
                 })
             }
             else{
@@ -290,7 +290,7 @@ softDelete=(req,res)=>{
             res.json({
                 status:404,
                 sucess:false,
-                message:"there is no land found on this id"
+                message:"There is no land found on this id"
             })
            }
            else{
@@ -310,7 +310,7 @@ softDelete=(req,res)=>{
                 res.json({
                     status:500,
                     success:false,
-                    message:"internal server error"
+                    message:"Internal server error"
                 })
             })
            }
@@ -348,7 +348,7 @@ Delete=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no data"
+                    message:"There is no data"
                 })
             }
             else{

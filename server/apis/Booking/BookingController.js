@@ -4,23 +4,23 @@ add=(req,res)=>{
     let formData=req.body
     let validation=""
     if(!formData.price){
-        validation+="price is required"
+        validation+="Price is required"
     }
     if(!formData.leaseStartDate){
-        validation+="leaseStartDate is required"
+        validation+="LeaseStartDate is required"
     }
     if(!formData.leaseEndDate){
-        validation+="leaseEndDate is required"
+        validation+="LeaseEndDate is required"
     }
      if(!formData.landId){
-        validation+="landId is required"
+        validation+="LandId is required"
     }
     
     if(!formData.cropId){
-        validation+="cropId is required"
+        validation+="CropId is required"
     }
     if(!formData.seasonId){
-        validation+="seasonId is required"
+        validation+="SeasonId is required"
     }
     if(!!validation){
         res.json({
@@ -56,7 +56,7 @@ add=(req,res)=>{
                     res.json({
                         status:200,
                         success:true,
-                        message:"booking Added!!",
+                        message:"Booking Added!!",
                         data:bookingData
                     })
                 })
@@ -65,7 +65,7 @@ add=(req,res)=>{
                     res.json({
                         status:500,
                         success:false,
-                        message:"internal server error"
+                        message:"Internal server error"
                     })
                 })
             }else{
@@ -126,7 +126,7 @@ all=(req,res)=>{
             res.json({
                 status:404,
                 success:false,
-                message:"there are no Bookings"
+                message:"There are no Bookings"
             })
             
         }
@@ -135,7 +135,7 @@ all=(req,res)=>{
         res.json({
             status:500,
             success:false,
-            message:"internal server error",
+            message:"Internal server error",
             error:err.message
         })
     })
@@ -166,7 +166,7 @@ single=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no Booking "
+                    message:"There is no Booking "
                 })
             }
             else{
@@ -182,7 +182,7 @@ single=(req,res)=>{
             res.json({
                 status:500,
                 success:false,
-                message:"internal server error"
+                message:"Internal server error"
             })
         })
     }
@@ -207,7 +207,7 @@ update=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no data"
+                    message:"There is no data"
                 })
             }
             else{
@@ -230,7 +230,7 @@ update=(req,res)=>{
                     res.json({
                         status:500,
                         success:false,
-                        message:"internal server error"
+                        message:"Internal server error"
                        
                     })
                 })
@@ -240,7 +240,7 @@ update=(req,res)=>{
             res.json({
                 status: 500,
                 success: false,
-                message: "internal server error"
+                message: "Internal server error"
                 
             })
         })
@@ -267,8 +267,8 @@ softDelete=(req,res)=>{
            if(!bookingData){
             res.json({
                 status:404,
-                sucess:false,
-                message:"there is no Booking found on this id"
+                success:false,
+                message:"There is no Booking found on this id"
             })
            }
            else{
@@ -288,7 +288,7 @@ softDelete=(req,res)=>{
                 res.json({
                     status:500,
                     success:false,
-                    message:"internal server error"
+                    message:"Internal server error"
                 })
             })
            }

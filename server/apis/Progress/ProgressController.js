@@ -4,13 +4,13 @@ add = (req, res) => {
     let formData = req.body
     let validation = ""
     if (!formData.bookingId) {
-        validation += "bookingId is required"
+        validation += "BookingId is required"
     }
     if (!formData.progressStage) {
-        validation += "progressStage is required"
+        validation += "ProgressStage is required"
     }
     if (!formData.description) {
-        validation += "description is required"
+        validation += "Description is required"
     }
 
 
@@ -109,7 +109,7 @@ all = (req, res) => {
                 res.json({
                     status: 404,
                     success: false,
-                    message: "there are no Progresss"
+                    message: "There are no Progresss"
                 })
 
             }
@@ -118,7 +118,7 @@ all = (req, res) => {
             res.json({
                 status: 500,
                 success: false,
-                message: "internal server error",
+                message: "Internal server error",
                 error: err.message
             })
         })
@@ -149,7 +149,7 @@ single = (req, res) => {
                     res.json({
                         status: 404,
                         success: false,
-                        message: "there is no Progress "
+                        message: "There is no Progress "
                     })
                 }
                 else {
@@ -165,7 +165,7 @@ single = (req, res) => {
                 res.json({
                     status: 500,
                     success: false,
-                    message: "internal server error"
+                    message: "Internal server error"
                 })
             })
     }
@@ -190,7 +190,7 @@ update = (req, res) => {
                     res.json({
                         status: 404,
                         success: false,
-                        message: "there is no data"
+                        message: "There is no data"
                     })
                 }
                 else {
@@ -215,7 +215,7 @@ update = (req, res) => {
                             res.json({
                                 status: 500,
                                 success: false,
-                                message: "internal server error"
+                                message: "Internal server error"
 
                             })
                         })
@@ -225,7 +225,7 @@ update = (req, res) => {
                 res.json({
                     status: 500,
                     success: false,
-                    message: "internal server error"
+                    message: "Internal server error"
 
                 })
             })
@@ -252,8 +252,8 @@ softDelete = (req, res) => {
                 if (!progressData) {
                     res.json({
                         status: 404,
-                        sucess: false,
-                        message: "there is no Progress found on this id"
+                        success: false,
+                        message: "There is no Progress found on this id"
                     })
                 }
                 else {
@@ -273,7 +273,7 @@ softDelete = (req, res) => {
                             res.json({
                                 status: 500,
                                 success: false,
-                                message: "internal server error"
+                                message: "Internal server error"
                             })
                         })
                 }
@@ -311,7 +311,7 @@ Delete = (req, res) => {
                     res.json({
                         status: 404,
                         success: false,
-                        message: "there is no data"
+                        message: "There is no data"
                     })
                 }
                 else {

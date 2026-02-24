@@ -6,10 +6,10 @@ login=(req,res)=>{
     let formData=req.body
     let validation=""
     if(!formData.email){
-        validation+="email is required"
+        validation+="Email is required"
     }
     if(!formData.password){
-        validation+="password is required"
+        validation+="Password is required"
     }
     if(!!validation){
          res.json({
@@ -76,17 +76,17 @@ farmerregister=(req,res)=>{
     let formData=req.body
     let validation=""
     if(!formData.email){
-        validation+="email is required"
+        validation+="Email is required"
     }
     
     if(!formData.password){
-        validation+="password is required"
+        validation+="Password is required"
     }
     if(!formData.contact){
-        validation+="contact is required"
+        validation+="Contact is required"
     }
     if(!formData.name){
-        validation+="name is required"
+        validation+="Name is required"
     }
     if(!!validation){
         res.json({
@@ -110,7 +110,7 @@ farmerregister=(req,res)=>{
                         res.json({
                             status:200,
                             success:true,
-                            message:"user Registered",
+                            message:"User Registered",
                             data:userData
                         })
                     })
@@ -137,7 +137,7 @@ farmerregister=(req,res)=>{
             res.json({
                 status: 500,
                 success: false,
-                message: "internal server error"
+                message: "Internal server error"
             })
         })
     }
@@ -149,17 +149,17 @@ register=(req,res)=>{
     let formData=req.body
     let validation=""
     if(!formData.email){
-        validation+="email is required"
+        validation+="Email is required"
     }
     
     if(!formData.password){
-        validation+="password is required"
+        validation+="Password is required"
     }
     if(!formData.contact){
-        validation+="contact is required"
+        validation+="Contact is required"
     }
     if(!formData.name){
-        validation+="name is required"
+        validation+="Name is required"
     }
     if(!!validation){
         res.json({
@@ -289,7 +289,7 @@ all=(req,res)=>{
            res.json({
                 status:200,
                 success:true,
-                message:"users Data is as:",
+                message:"Users Data is as:",
                 data:userData
             })
         }
@@ -297,7 +297,7 @@ all=(req,res)=>{
             res.json({
                 status:404,
                 success:false,
-                message:"there are no users"
+                message:"There are no users"
             })
             
         }
@@ -337,14 +337,14 @@ single=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no user "
+                    message:"There is no user "
                 })
             }
             else{
                 res.json({
                     status:200,
                     success:true,
-                    message:"user Data is as",
+                    message:"User Data is as",
                     data:userData
                 })
             }
@@ -353,7 +353,7 @@ single=(req,res)=>{
             res.json({
                 status:500,
                 success:false,
-                message:"internal server error"
+                message:"Internal server error"
             })
         })
     }
@@ -394,7 +394,7 @@ update=(req,res)=>{
                     res.json({
                         status:200,
                         success:true,
-                        message:"user Updated",
+                        message:"User Updated",
                         data: userData
                     })
                 })
@@ -402,7 +402,7 @@ update=(req,res)=>{
                     res.json({
                         status:500,
                         success:false,
-                        message:"internal server error"
+                        message:"Internal server error"
                        
                     })
                 })
@@ -412,7 +412,7 @@ update=(req,res)=>{
             res.json({
                 status: 500,
                 success: false,
-                message: "internal server error"
+                message: "Internal server error"
                 
             })
         })
@@ -441,7 +441,7 @@ Delete=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no data"
+                    message:"There is no user data"
                 })
             }
             else{
@@ -450,7 +450,7 @@ Delete=(req,res)=>{
                         res.json({
                             status: 200,
                             success: true,
-                            message: "user deleted!!"
+                            message: "User deleted!!"
                         })
                     })
                     .catch((err) => {

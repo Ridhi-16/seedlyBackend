@@ -5,14 +5,14 @@ add=(req,res)=>{
     let formData=req.body
     let validation=""
     if(!formData.seasonName){
-        validation+="season name is required"
+        validation+="Season name is required"
     }
      if(!formData.startMonth){
-        validation+="startMonth is required"
+        validation+="Start month is required"
     }
     
      if(!formData.endMonth){
-        validation+="endMonth is required"
+        validation+="End month is required"
     }
     if(!!validation){
         res.json({
@@ -38,7 +38,7 @@ add=(req,res)=>{
                     res.json({
                         status:200,
                         success:true,
-                        message:"season Added!!",
+                        message:"Season Added!!",
                         data:seasonData
                     })
                 })
@@ -46,7 +46,7 @@ add=(req,res)=>{
                     res.json({
                         status:500,
                         success:false,
-                        message:"internal server error"
+                        message:"Internal server error"
                     })
                 })
             }else{
@@ -82,7 +82,7 @@ all=(req,res)=>{
            res.json({
                 status:200,
                 success:true,
-                message:"seasons Data is as:",
+                message:"Seasons Data is as:",
                 data:seasonData
             })
         }
@@ -90,7 +90,7 @@ all=(req,res)=>{
             res.json({
                 status:404,
                 success:false,
-                message:"there are no seasons"
+                message:"There are no seasons"
             })
             
         }
@@ -130,14 +130,14 @@ single=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no season "
+                    message:"There is no season "
                 })
             }
             else{
                 res.json({
                     status:200,
                     success:true,
-                    message:"season Data is as",
+                    message:"Season Data is as",
                     data:seasonData
                 })
             }
@@ -171,7 +171,7 @@ update=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no data"
+                    message:"There is no data"
                 })
             }
             else{
@@ -194,7 +194,7 @@ update=(req,res)=>{
                     res.json({
                         status:200,
                         success:true,
-                        message:"season Updated",
+                        message:"Season Updated",
                         data: seasonData
                     })
                 })
@@ -202,7 +202,7 @@ update=(req,res)=>{
                     res.json({
                         status:500,
                         success:false,
-                        message:"internal server error"
+                        message:"Internal server error"
                        
                     })
                 })
@@ -240,7 +240,7 @@ softDelete=(req,res)=>{
             res.json({
                 status:404,
                 sucess:false,
-                message:"there is no season found on this id"
+                message:"There is no season found on this id"
             })
            }
            else{
@@ -260,7 +260,7 @@ softDelete=(req,res)=>{
                 res.json({
                     status:500,
                     success:false,
-                    message:"internal server error"
+                    message:"Internal server error"
                 })
             })
            }
@@ -298,7 +298,7 @@ Delete=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no data"
+                    message:"There is no data"
                 })
             }
             else{
@@ -307,7 +307,7 @@ Delete=(req,res)=>{
                         res.json({
                             status: 200,
                             success: true,
-                            message: "season deleted!!"
+                            message: "Season deleted!!"
                         })
                     })
                     .catch((err) => {

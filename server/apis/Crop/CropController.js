@@ -4,23 +4,23 @@ add=(req,res)=>{
     let formData=req.body
     let validation=""
     if(!formData.cropName){
-        validation+="crop name is required"
+        validation+="Crop name is required"
     }
      if(!formData.duration){
-        validation+=" duration is required"
+        validation+=" Duration is required"
     }
     
      if(!formData.description){
-        validation+=" description is required"
+        validation+=" Description is required"
     }
     if(!formData.seasonId){
-        validation+="seasonId is required"
+        validation+="SeasonId is required"
     }
     if(!formData.farmerId){
-        validation+="farmerId is required"
+        validation+="FarmerId is required"
     }
     if(!formData.landId){
-        validation+="landId is required"
+        validation+="LandId is required"
     }
     // if(!req.file){
     //     validation+="profile is required"
@@ -56,7 +56,7 @@ add=(req,res)=>{
                     res.json({
                         status:200,
                         success:true,
-                        message:"crop Added!!",
+                        message:"Crop Added!!",
                         data:cropData
                     })
                 })
@@ -65,7 +65,7 @@ add=(req,res)=>{
                     res.json({
                         status:500,
                         success:false,
-                        message:"internal server error"
+                        message:"Internal server error"
                         
                     })
                 })
@@ -111,7 +111,7 @@ all=(req,res)=>{
            res.json({
                 status:200,
                 success:true,
-                message:"crops Data is as:",
+                message:"Crops Data is as:",
                 data:cropData
             })
         }
@@ -119,7 +119,7 @@ all=(req,res)=>{
             res.json({
                 status:404,
                 success:false,
-                message:"there are no crops"
+                message:"There are no crops"
             })
             
         }
@@ -128,7 +128,7 @@ all=(req,res)=>{
         res.json({
             status:500,
             success:false,
-            message:"internal server error",
+            message:"Internal server error",
             error:err.message
         })
     })
@@ -159,14 +159,14 @@ single=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no crop "
+                    message:"There is no crop "
                 })
             }
             else{
                 res.json({
                     status:200,
                     success:true,
-                    message:"crop Data is as",
+                    message:"Crop Data is as",
                     data:cropData
                 })
             }
@@ -175,7 +175,7 @@ single=(req,res)=>{
             res.json({
                 status:500,
                 success:false,
-                message:"internal server error"
+                message:"Internal server error"
             })
         })
     }
@@ -200,7 +200,7 @@ update=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no data"
+                    message:"There is no data"
                 })
             }
             else{
@@ -228,7 +228,7 @@ update=(req,res)=>{
                     res.json({
                         status:500,
                         success:false,
-                        message:"internal server error"
+                        message:"Internal server error"
                        
                     })
                 })
@@ -238,7 +238,7 @@ update=(req,res)=>{
             res.json({
                 status: 500,
                 success: false,
-                message: "internal server error"
+                message: "Internal server error"
                 
             })
         })
@@ -265,8 +265,8 @@ softDelete=(req,res)=>{
            if(!cropData){
             res.json({
                 status:404,
-                sucess:false,
-                message:"there is no Crop found on this id"
+                success:false,
+                message:"There is no Crop found on this id"
             })
            }
            else{
@@ -286,7 +286,7 @@ softDelete=(req,res)=>{
                 res.json({
                     status:500,
                     success:false,
-                    message:"internal server error"
+                    message:"Internal server error"
                 })
             })
            }
@@ -325,7 +325,7 @@ Delete=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no data"
+                    message:"There is no data"
                 })
             }
             else{
