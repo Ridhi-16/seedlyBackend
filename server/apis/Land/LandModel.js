@@ -1,5 +1,6 @@
 const mongoose=require("mongoose")
 const LandSchema=mongoose.Schema({
+    landName:{type:String,default:""},
     ULPIN: {type: String, required: true, trim: true, minlength: 14, maxlength: 14},
     farmerId:{type:mongoose.Schema.Types.ObjectId,default:null,ref:"UserModel"},
     location:{type:String,default:""},

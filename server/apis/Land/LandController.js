@@ -19,6 +19,9 @@ add=(req,res)=>{
      if(!formData.landAvailability){
         validation+="Land Availability is required"
     }
+     if(!formData.landName){
+        validation+="Land Name is required"
+    }
     // if(!req.file){
     //     validation+="profile is required"
     // }
@@ -44,6 +47,8 @@ add=(req,res)=>{
             if(!landData){
                 let landObj= new LandModel()
                 landObj.ULPIN=formData.ULPIN
+                landObj.landName=formData.landName
+
                 landObj.farmerId=req.decoded.userId
                 landObj.location=formData.location
                 landObj.area=formData.area
@@ -205,6 +210,9 @@ update=(req,res)=>{
                 })
             }
             else{
+                if(!!formData.landName){
+                   landData.landName=formData.landName 
+                }
                 
                 if(!!formData.area){
                    landData.area=formData.area 
