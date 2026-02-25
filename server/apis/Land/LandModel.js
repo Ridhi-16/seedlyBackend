@@ -8,10 +8,7 @@ const LandSchema=mongoose.Schema({
     price:{type:Number,defult:""},
     images:{type:[],default:"no pic.jpg"},
     landAvailability:{type:String,default:""},
-    isBooked: {
-    type: Boolean,
-    default: false
-  },
+    
     status:{type:Boolean,default:"false"},
     createdAt:{type:Date,default:Date.now()}
 

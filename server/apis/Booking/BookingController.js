@@ -1,5 +1,5 @@
 const BookingModel=require("./BookingModel")
-const LandModel=require("../Land/LandModel")
+const CropModel=require("../Crop/CropModel")
 
 add=(req,res)=>{
     let formData=req.body
@@ -55,8 +55,8 @@ add=(req,res)=>{
 
                 bookingObj.save()
                 .then(async(bookingData)=>{
-                     await LandModel.findByIdAndUpdate(
-                formData.landId,
+                     await CropModel.findByIdAndUpdate(
+                formData.cropId,
                 { isBooked: true }
             )
                     
