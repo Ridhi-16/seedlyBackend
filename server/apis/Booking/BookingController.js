@@ -1,4 +1,5 @@
 const BookingModel=require("./BookingModel")
+const LandModel=require("../Land/LandModel")
 
 add=(req,res)=>{
     let formData=req.body
@@ -39,6 +40,7 @@ add=(req,res)=>{
 
         .then(async (bookingData)=>{
             if(!bookingData){
+                 
                 let bookingObj= new BookingModel()
                 bookingObj.userId=req.decoded.userId
                 bookingObj.price=formData.price
@@ -50,8 +52,13 @@ add=(req,res)=>{
 
 
 
+
                 bookingObj.save()
-                .then((bookingData)=>{
+                .then(async(bookingData)=>{
+                     await LandModel.findByIdAndUpdate(
+                formData.landId,
+                { isBooked: true }
+            )
                     
                     res.json({
                         status:200,
