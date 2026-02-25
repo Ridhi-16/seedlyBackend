@@ -29,7 +29,7 @@ router.post("/contact/changeStatus",ContactController.changeStatus)
 
 //land
 router.post("/land/softDelete",LandController.softDelete)
-router.post("/land/delete",LandController.Delete)
+
 
 //season
 router.post("/season/add",SeasonUpload.single("image"),SeasonController.add)

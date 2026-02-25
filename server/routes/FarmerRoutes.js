@@ -38,6 +38,8 @@ router.post("/progress/delete",ProgressController.Delete)
 router.post("/land/add",LandUpload.array("images", 5),LandController.add)
 router.post("/land/update",LandUpload.array("images", 5),LandController.update)
 
+router.post("/land/delete",LandController.Delete)
+
 //booking
 // router.post("/booking/update",BookingController.update)
 
