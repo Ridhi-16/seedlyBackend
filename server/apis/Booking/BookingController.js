@@ -34,6 +34,7 @@ add=(req,res)=>{
         //duplicacy     
         BookingModel.findOne({
   landId: formData.landId,
+    cropId: formData.cropId,
   leaseStartDate: { $lte: formData.leaseEndDate },
   leaseEndDate: { $gt: formData.leaseStartDate }
 })
