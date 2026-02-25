@@ -206,7 +206,7 @@ update=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"There is no "
+                    message:"There is no Land found on this id"
                 })
             }
             else{
