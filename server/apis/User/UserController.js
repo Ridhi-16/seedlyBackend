@@ -378,7 +378,7 @@ update=(req,res)=>{
                 res.json({
                     status:404,
                     success:false,
-                    message:"there is no data"
+                    message:"There is no data"
                 })
             }
             else{
