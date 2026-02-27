@@ -1,6 +1,6 @@
 const express = require("express");
 const { suggestCrop } = require("../apis/Gemini/GeminiController");
-const { voiceProgress } = require("../controllers/aiController");
+const { voiceProgress } = require("../apis/Gemini/GeminiController");
 const router = express.Router();
 
 router.post("/suggest", suggestCrop);
