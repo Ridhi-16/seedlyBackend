@@ -56,10 +56,7 @@ add=(req,res)=>{
 
                 bookingObj.save()
                 .then(async(bookingData)=>{
-                     await CropModel.findByIdAndUpdate(
-                formData.cropId,
-                { isBooked: true }
-            )
+                     
                     
                     res.json({
                         status:200,
@@ -282,8 +279,13 @@ softDelete=(req,res)=>{
            else{
             bookingData.status=!bookingData.status
             bookingData.save()
-            .then((bookingData)=>{
+            .then(async (bookingData)=>{
+                await CropModel.findByIdAndUpdate(
+    bookingData.cropId,   // better to use bookingData.cropId
+    { isBooked: bookingData.status }
+)
                 res.json({
+                    
                     status:200,
                     success:true,
                     message:"Booking updated",
