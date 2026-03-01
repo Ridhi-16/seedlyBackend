@@ -1,4 +1,5 @@
 const { uploadImg } = require("../../utilities/helper")
+const { getCropSummary } = require("../../services/geminiService");
 const CropModel=require("./CropModel")
 add=(req,res)=>{
     let formData=req.body
@@ -52,7 +53,21 @@ add=(req,res)=>{
                
                
                 cropObj.save()
-                .then((cropData)=>{
+                .then(async (cropData)=>{
+                    try {
+                const aiSummary = await getCropSummary({
+                  cropName: cropData.cropName,
+                  season: formData.seasonId, // or season name if you populate later
+                  duration: cropData.duration
+                })
+
+                cropData.ai_summary = aiSummary
+                await cropData.save()
+
+              } catch (aiErr) {
+                console.log("AI summary failed:", aiErr.message)
+                // ❌ do NOT fail crop creation
+              }
                     res.json({
                         status:200,
                         success:true,

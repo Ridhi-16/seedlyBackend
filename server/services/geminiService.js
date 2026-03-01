@@ -1,5 +1,5 @@
 require("dotenv").config();
-// console.log(process.env.GEMINI_API_KEY);
+console.log(process.env.GEMINI_API_KEY);
 
 
 const fetch = require("node-fetch");
@@ -82,4 +82,56 @@ Do not add extra text.
   }
 };
 
-module.exports = { getCropSuggestion };
+
+const getCropSummary = async ({ cropName, season, duration }) => {
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [
+          {
+            parts: [
+              {
+                text: `
+You are an agricultural expert in India.
+
+Crop:
+- Name: ${cropName}
+- Season: ${season}
+- Duration: ${duration}
+
+Return ONLY valid JSON in this format:
+
+{
+  "expected_yield": "range with unit",
+  "weather_suitability": "short weather tolerance",
+  "risk_level": "Low | Medium | High",
+  "ai_insight": "1-2 helpful lines"
+}
+
+Do NOT use markdown.
+Do NOT use backticks.
+`
+              }
+            ]
+          }
+        ]
+      })
+    }
+  );
+
+  const result = await response.json();
+  let text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+  if (!text) throw new Error("Empty AI response");
+
+  // 🔥 CLEAN MARKDOWN
+  text = text.replace(/```json/g, "").replace(/```/g, "").trim();
+
+  return JSON.parse(text);
+};
+
+module.exports = { getCropSummary, getCropSuggestion };
+

@@ -7,6 +7,10 @@ const CropSchema=mongoose.Schema({
     duration:{type:String,default:""},
     description:{type:String,default:""},
     image:{type:String,default:"no pic.jpg"},
+    ai_summary: {
+  type: Object,
+  default: null
+},
     isBooked: {
     type: Boolean,
     default: false
